@@ -7,6 +7,8 @@
   <body>
     <form method='POST' action='index.php'>
 
+      <h1>Search among the most popular Repos!</h1>
+
       <?php
         $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/repos/');
         $dom = new DomDocument;
@@ -17,13 +19,16 @@
         echo "<option disabled selected>Repos</option>";
         $repos = $dom->getElementsByTagName('repo');
         foreach ($repos as $repo) {
-          echo "<option value='" . $repo->getAttribute("name") . "'>";
-          echo $repo->getAttribute("name");
+          $name = $repo->getAttribute("name"); 
+          echo "<option value='" . $name . "'>";
+          echo $name;
           echo "</option>";
         }
         echo "</select>";
-        ?>
-        <button>Submit!</button>
+      ?>
+
+      <button>Submit!</button>
+
     </form>
 
 </body>
