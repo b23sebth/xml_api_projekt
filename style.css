@@ -1,4 +1,16 @@
 body {
-  font-family: 'Montserrat'
+  font-family: 'Montserrat';
+  background-color: #0d1117;
+}
+
+#homepage {
+  margin-top: 20vh;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  padding:30px;
+  border-radius: 25px;
+  background-color: #242424;
+  color: #fff;
 }
 

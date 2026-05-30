@@ -9,37 +9,41 @@
   </head>
 
   <body>
-    <h1>Search among the most popular Repos!</h1>
+    <div id='homepage'>
 
-    <form method='POST' action='response_browse.php'>
+      <h1>Search among the most popular Repos!</h1>
+
+      <form method='POST' action='response_browse.php'>
 
 
-      <?php
-        $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/repos/');
-        $dom = new DomDocument;
-        $dom->preserveWhiteSpace = FALSE;
-        $dom->loadXML($xml);
+        <?php
+          $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/repos/');
+          $dom = new DomDocument;
+          $dom->preserveWhiteSpace = FALSE;
+          $dom->loadXML($xml);
 
-        echo "<select name='repo'>";
-        echo "<option disabled selected>Choose Repo</option>";
-        $repos = $dom->getElementsByTagName('repo');
-        foreach ($repos as $repo) {
-          $name = $repo->getAttribute("name"); 
-          echo "<option value='" . $name . "'>";
-          echo $name;
-          echo "</option>";
-        }
-        echo "</select>";
-      ?>
+          echo "<select name='repo'>";
+          echo "<option disabled selected>Choose Repo</option>";
+          $repos = $dom->getElementsByTagName('repo');
+          foreach ($repos as $repo) {
+            $name = $repo->getAttribute("name"); 
+            echo "<option value='" . $name . "'>";
+            echo $name;
+            echo "</option>";
+          }
+          echo "</select>";
+        ?>
 
-      <input type='submit' value='Browse'>
+        <input type='submit' value='Browse'>
 
-    </form>
+      </form>
 
-    <form method='POST', action='response_search.php'>
-      <input type='text' name='search' placeholder='Search anything'>
-      <input type='submit' value='Search'>
-    </form>
+      <form method='POST', action='response_search.php'>
+        <input type='text' name='search' placeholder='Search anything'>
+        <input type='submit' value='Search'>
+      </form>
+
+    </div>
   </body>
 
 </html>
