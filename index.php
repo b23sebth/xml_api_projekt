@@ -11,7 +11,7 @@
   <body>
     <h1>Search among the most popular Repos!</h1>
 
-    <form method='POST' action='index.php'>
+    <form method='POST' action='response_browse.php'>
 
 
       <?php
@@ -36,11 +36,10 @@
 
     </form>
 
-    <form method='POST', action='index.php'>
+    <form method='POST', action='response_search.php'>
       <input type='text' placeholder='Search anything'></input>
       <input type='submit' value='Search'></input>
     </form>
-
-</body>
+  </body>
 
 </html>
