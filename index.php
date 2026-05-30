@@ -5,9 +5,10 @@
   </head>
 
   <body>
+    <h1>Search among the most popular Repos!</h1>
+
     <form method='POST' action='index.php'>
 
-      <h1>Search among the most popular Repos!</h1>
 
       <?php
         $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/repos/');
@@ -16,7 +17,7 @@
         $dom->loadXML($xml);
 
         echo "<select name='repo'>";
-        echo "<option disabled selected>Repos</option>";
+        echo "<option disabled selected>Choose Repo</option>";
         $repos = $dom->getElementsByTagName('repo');
         foreach ($repos as $repo) {
           $name = $repo->getAttribute("name"); 
@@ -27,8 +28,13 @@
         echo "</select>";
       ?>
 
-      <button>Submit!</button>
+      <input type='submit' value='Browse'></input>
 
+    </form>
+
+    <form method='POST', action='index.php'>
+      <input type='text' placeholder='Search anything'></input>
+      <input type='submit' value='Search'></input>
     </form>
 
 </body>
