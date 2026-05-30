@@ -32,13 +32,13 @@
         echo "</select>";
       ?>
 
-      <input type='submit' value='Browse'></input>
+      <input type='submit' value='Browse'>
 
     </form>
 
     <form method='POST', action='response_search.php'>
-      <input type='text' placeholder='Search anything'></input>
-      <input type='submit' value='Search'></input>
+      <input type='text' name='search' placeholder='Search anything'>
+      <input type='submit' value='Search'>
     </form>
   </body>
 

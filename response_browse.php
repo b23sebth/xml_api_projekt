@@ -5,9 +5,9 @@
     $repo = $_POST['repo']; 
     echo "<h2>" . $repo . "</h2>";
     } else {
-      header("Refresh:0; url=index.php");
+      header("location: index.php");
     }
-?>
+  ?>
 
 </html>
 
