@@ -11,7 +11,7 @@
   <body>
     <div id='homepage'>
 
-      <h1>Search among the most popular Repos!</h1>
+      <h1>Search amongst the most popular Repos!</h1>
 
       <form method='POST' action='response_browse.php'>
 
