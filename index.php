@@ -40,9 +40,29 @@
         </form>
 
         <form method='POST', action='response_search.php'>
-          <input type='text' name='search' placeholder='Search anything'>
+          <input type='text' name='search' placeholder='Search any file'>
           <input type='submit' value='Search'>
         </form>
+
+        <div>
+          <h3>Browse commits by author:</h3>
+          
+          <?php
+            $xml_2 = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/commits/');
+            $dom_2 = new DomDocument;
+            $dom_2->preserveWhiteSpace = FALSE;
+            $dom_2->loadXML($xml_2);
+
+            $authors = $dom_2->getElementsByTagName('commit');
+            foreach ($authors as $author) {
+              $login = $author->getAttribute('login');
+              $name = $author->getAttribute('author');
+              echo "<div>";
+              echo "<a href='response_author.php?login=$login'>$name ($login)</a>";
+              echo "</div>";
+            }
+          ?>
+        </div>
 
       </div>
     </div>
