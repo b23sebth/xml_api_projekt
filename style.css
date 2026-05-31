@@ -18,6 +18,8 @@ h1 {font-size: 3em}
 
 a {color: var(--main-text-color)}
 
+form {margin: 0;}
+
 select, input[type=text] {
   background-color: var(--background-color);
   color: var(--main-text-color);
@@ -46,6 +48,7 @@ input[type=submit]:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 #homepage {
