@@ -53,13 +53,22 @@
             $dom_2->preserveWhiteSpace = FALSE;
             $dom_2->loadXML($xml_2);
 
+            $printedAuthors = [];
+
             $authors = $dom_2->getElementsByTagName('commit');
+
             foreach ($authors as $author) {
               $login = $author->getAttribute('login');
               $name = $author->getAttribute('author');
-              echo "<div>";
-              echo "<a href='response_author.php?login=$login'>$name ($login)</a>";
-              echo "</div>";
+
+              #Only prints out author if not done before.
+              if (!isset($printedAuthors[$login])) {
+                echo "<div>";
+                echo "<a href='response_author.php?login=$login'>$name ($login)</a>";
+                echo "</div>";
+
+                $printedAuthors[$login] = TRUE;
+              }
             }
           ?>
         </div>

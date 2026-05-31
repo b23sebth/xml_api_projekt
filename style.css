@@ -16,6 +16,8 @@ body {
 
 h1 {font-size: 3em}
 
+a {color: var(--main-text-color)}
+
 select, input[type=text] {
   background-color: var(--background-color);
   color: var(--main-text-color);
