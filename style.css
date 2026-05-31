@@ -1,3 +1,14 @@
+:root {
+  --main-background-color: #0d1117;
+  --background-color: #242424;
+  --light-accent-color: #545454;
+  --dark-accent-color: #343434;
+  --main-text-color: #fff;
+
+  --primary-font: Montserrat;
+  --fallback-font: Arial;
+}
+
 body {
   font-family: 'Montserrat';
   background-color: #0d1117;
@@ -10,8 +21,8 @@ body {
   width: fit-content;
   padding:30px;
   border-radius: 25px;
-  background-color: #242424;
-  color: #fff;
-  border: 0.5px solid #545454;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  border: 0.5px solid var(--light-accent-color);
 }
 
