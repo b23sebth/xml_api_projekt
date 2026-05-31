@@ -80,3 +80,7 @@ input[type=submit]:hover {
     background-color: var(--dark-accent-color);
 }
 
+#browse-repos {
+  color: var(--main-text-color);
+}
+

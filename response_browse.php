@@ -22,6 +22,11 @@
     </nav>
 
     <?php
+      $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/repos/?name=' . $repo);
+      $dom = new DomDocument;
+      $dom->preserveWhiteSpace = FALSE;
+      $dom->loadXML($xml);
+
       echo "<div id='browse-repos'>";
         echo "<h1>Now displaying: " . $repo . "</h1>";
       echo "</div>";
