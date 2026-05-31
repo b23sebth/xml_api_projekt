@@ -1,7 +1,14 @@
 <html>
 
   <head>
-    <title>Github Service</title>
+    <?php
+      if (!isset($_POST['repo'])) {
+        header("location: index.php");
+      } else {
+        $repo = $_POST['repo']; 
+        echo "<title>" . $repo . "</title>";
+      }
+    ?>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +21,13 @@
       <a id='return-homepage' href='index.php'>Homepage</a>
     </nav>
 
+    <?php
+      echo "<div id='browse-repos'>";
+        echo "<h1>Now displaying: " . $repo . "</h1>";
+      echo "</div>";
+    ?>
+
+  </body>
 
 </html>
 
