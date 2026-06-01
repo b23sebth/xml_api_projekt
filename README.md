@@ -22,6 +22,8 @@ Projektet använder DOM samt [Github-service](https://wwwlab.webug.se/examples/X
 ![Repo Page](/example_pictures/repo_page.png)
 
 ### Search page:
-![Search Page](/example_pictures/search_page)
+![Search Page](/example_pictures/search_page.png)
 
+### Author Page:
+![Author Page](/example_pictures/author_page.png)
 
