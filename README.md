@@ -15,5 +15,8 @@ Projektet använder DOM samt [Github-service](https://wwwlab.webug.se/examples/X
 ### 1.
 
 ## Exempelbilder:
-![Homepage][example_pictures/homepage.png]
+### Homepage:
+![Homepage][/example_pictures/homepage.png]
 
+### Repo page (row-layout)
+![Repo page][/example_pictures/repo_page.png]
