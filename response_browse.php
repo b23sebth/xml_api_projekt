@@ -32,8 +32,46 @@
 
       echo "<div id='browse-repos'>";
 
+      echo "<h1>Now displaying: <a href='" . $choosenRepo->getAttribute('url') . " '>" . $repo . "</a> </h1>";
+
+        #Using row-layout
         echo "<table>";
-          echo "</caption> <a href = ' " . $choosenRepo->getAttribute('url') . " '>" . $repo ." (URL)</a> </caption>";
+        echo "<caption>Repo Files</caption>";
+          $files = $dom->getElementsByTagName('file');
+          foreach ($files as $file) {
+
+            $type = $file->getAttribute('type');
+            if ($type == 'directory') {
+              $subFiles = $file->getElementsByTagName('file');
+
+              echo "<tr><td>";
+                echo "<table>";
+                  echo "<caption>" . $file->getAttribute('fullname') . " (Directory)</caption>";
+
+                  echo "<thead>";
+                    echo "<tr>
+                       <td>Full Name</td>
+                       <td>Name</td>
+                       <td>Raw URL</td>
+                    </tr>";
+                  echo "</thead>";
+
+                  echo "<tbody>";
+
+                    foreach ($subFiles as $subFile) {
+                      echo "<tr>
+                        <td>" . $subFile->getAttribute('fullname') . "</td>
+                        <td>" . $subFile->getAttribute('name') . "</td>
+                        <td>" . "<a href=' " . $subFile->getAttribute('url') . "'>" . $subFile->getAttribute('url') ."</a>" . "</td>
+                      </tr>";
+                    }
+
+                  echo "</tbody>";
+                echo "</table>";
+
+              echo "</td></tr>";
+            }
+          }
         echo "</table>";
 
       echo "</div>";
