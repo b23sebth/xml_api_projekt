@@ -29,9 +29,42 @@
 
       echo "<div id='search-page'>";
         echo "<h1>Showing results for: " . $search . "</h1>";
+
+        $sections = $dom->getElementsByTagName('section');
+        echo "<table>";
+        echo "<thead>";
+          echo "<tr>";
+              echo "<th>Filename</th>";
+              echo "<th>Author</th>";
+              echo "<th>CommitID</th>";
+              echo "<th>Message</th>";
+          echo "</tr>";
+          echo "</thead>";
+          echo "<tbody>";
+            $ids = [];
+            foreach ($sections as $section) {
+              
+              #Only unique commitIDs get added to the table.
+
+              $commitid = $section->getAttribute('commitid');
+
+              if (isset($ids[$commitid])) {
+                continue;
+              }
+
+              $ids[$commitid] = TRUE;
+
+              echo "<tr>";
+              echo "<td>" . $section->getAttribute('filename') . "</td>";
+              echo "<td>" . $section->getAttribute('author') . "</td>";
+              echo "<td>" . $section->getAttribute('commitid') . "</td>";
+              echo "<td>" . $section->getAttribute('message') . "</td>";
+              echo "</tr>";
+            }
+          echo "</tbody>";
+        echo "</table>";
+
       echo "</div>";
-
-
     ?>
 
   </body>
