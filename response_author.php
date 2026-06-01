@@ -22,11 +22,16 @@
     </nav>
 
     <?php
-      $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/commits/?author=' . $author);
+      $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/commits/?login=' . $author);
       $dom = new DomDocument;
       $dom->preserveWhiteSpace = FALSE;
       $dom->loadXML($xml);
 
+      $commits = $dom->getElementsByTagName('commit');
+
+      echo "<div id='author-page'>";
+        echo "<h1>Showing results for: " . $commits->item(0)->getAttribute('author') . "</h1>";
+      echo "</div>";
     ?>
   
   </body>
