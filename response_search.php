@@ -7,7 +7,7 @@
       header("Refresh:0; url=index.php");
       } else {
         $search = $_POST['search']; 
-        echo "<title>" . $search . "</title>";
+        echo "<title>Search: " . $search . "</title>";
       }
     ?>
     <link rel="stylesheet" href="style.css">
@@ -20,6 +20,19 @@
     <nav>
       <a id='return-homepage' href='index.php'>Homepage</a>
     </nav>
+
+    <?php
+      $xml = file_get_contents('https://wwwlab.webug.se/examples/XML/githubservice/files/?messagesearch=' . $search);
+      $dom = new DomDocument;
+      $dom->preserveWhiteSpace = FALSE;
+      $dom->loadXML($xml);
+
+      echo "<div id='search-page'>";
+        echo "<h1>Showing results for: " . $search . "</h1>";
+      echo "</div>";
+
+
+    ?>
 
   </body>
 

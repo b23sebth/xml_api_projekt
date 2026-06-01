@@ -91,7 +91,7 @@ font-size: 1.2em;
     background-color: var(--dark-accent-color);
 }
 
-#browse-repos {
+#browse-repos, #search-page {
   color: var(--main-text-color);
   background-color: var(--background-color);
   margin: 50px 10px;

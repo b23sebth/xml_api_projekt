@@ -41,7 +41,7 @@
         </form>
 
         <form method='POST', action='response_search.php'>
-          <input type='text' name='search' placeholder='Search any file'>
+          <input type='text' name='search' placeholder='Commit-message'>
           <input type='submit' value='Search'>
         </form>
 
