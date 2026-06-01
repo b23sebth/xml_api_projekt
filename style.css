@@ -44,7 +44,7 @@ input[type=submit]:hover {
     background-color: var(--dark-accent-color);
 }
 
-td {
+td, th {
   border: 1px solid #fff;
 }
 
