@@ -82,6 +82,6 @@ input[type=submit]:hover {
 
 #browse-repos {
   color: var(--main-text-color);
-  margin: 10px;
+  margin: 30px 10px;
 }
 

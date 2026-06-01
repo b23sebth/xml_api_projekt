@@ -30,11 +30,11 @@
       $choosenRepo = $choosenRepo->item(0); #The desired repo should be the only item in the list.
 
       echo "<div id='browse-repos'>";
-        echo "<h1>Now displaying: " . $repo . "</h1>";
 
         echo "<table>";
-          echo "</caption> <a href = ' " . $choosenRepo->getAttribute('url') . " '>URL</a> </caption>";
+          echo "</caption> <a href = ' " . $choosenRepo->getAttribute('url') . " '>" . $repo ." (URL)</a> </caption>";
         echo "</table>";
+
       echo "</div>";
     ?>
 
