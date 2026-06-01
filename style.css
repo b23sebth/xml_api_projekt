@@ -46,6 +46,13 @@ input[type=submit]:hover {
 
 td, th {
   border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+caption {
+font-weight:bold;
+font-size: 1.2em;
 }
 
 #inner-div {
@@ -86,6 +93,10 @@ td, th {
 
 #browse-repos {
   color: var(--main-text-color);
-  margin: 10px;
+  background-color: var(--background-color);
+  margin: 50px 10px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 0.5px solid var(--light-accent-color);
 }
 
