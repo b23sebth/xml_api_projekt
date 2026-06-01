@@ -30,7 +30,28 @@
       $commits = $dom->getElementsByTagName('commit');
 
       echo "<div id='author-page'>";
-        echo "<h1>Showing results for: " . $commits->item(0)->getAttribute('author') . "</h1>";
+        echo "<h1>Showing results for: " . $commits->item(0)->getAttribute('author') . " (" . $author . ")" . "</h1>";
+
+        echo "<table>";
+          echo "<thead>";
+            echo "<tr>";
+                echo "<th>Repo</th>";
+                echo "<th>CommitID</th>";
+                echo "<th>Timestamp</th>";
+                echo "<th>Message</th>";
+            echo "</tr>";
+          echo "</thead>";
+          echo "<tbody>";
+            foreach ($commits as $commit) {
+              echo "<tr>";
+                echo "<td>" . $commit->getAttribute('repo') . "</td>";
+                echo "<td>" . $commit->getAttribute('id') . "</td>";
+                echo "<td>" . $commit->getAttribute('timestamp') . "</td>";
+                echo "<td>" . $commit->getAttribute('message') . "</td>";
+              echo "</tr>";
+            }
+          echo "</tbody>";
+        echo "</table>";
       echo "</div>";
     ?>
   
